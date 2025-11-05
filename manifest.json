@@ -1,0 +1,23 @@
+{
+  "name": "26 Shots, 0 Regerts: Johnny’s Liver Files for Divorce in Music City",
+  "short_name": "Johnny's Birthday",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#11151c",
+  "theme_color": "#ffd700",
+  "description": "Nashville itinerary for Johnny's 26th birthday, January 8-11, 2026. Celebratory party theme, mobile-friendly, and interactive.",
+  "icons": [
+    {
+      "src": "party-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "party-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": ".",
+  "orientation": "portrait"
+}
