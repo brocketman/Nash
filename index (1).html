@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26 Shots, 0 Regerts: Johnny's Nashville Birthday Trip</title>
+    <style>
+        :root {
+            --color-bg-dark: #1a1a2e;
+            --color-bg-card: #16213e;
+            --color-gold: #ffd700;
+            --color-gold-light: #ffe55c;
+            --color-silver: #c0c0c0;
+            --color-text: #ffffff;
+            --color-text-muted: #b8b8b8;
+            --color-accent: #ff6b6b;
+            --space-xs: 8px;
+            --space-sm: 12px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, #0f3460 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: var(--space-lg);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, var(--color-bg-card) 0%, #1e3a5f 100%);
+            border-radius: var(--radius);
+            border: 2px solid var(--color-gold);
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '🎉';
+            position: absolute;
+            font-size: 60px;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        header::after {
+            content: '🍾';
+            position: absolute;
+            font-size: 60px;
+            bottom: 10px;
+            right: 20px;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--color-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: var(--space-md);
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--color-silver);
+            margin-top: var(--space-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .emoji-decoration {
+            font-size: 1.5rem;
+        }
+
+        .about-section, .tips-section {
+            background: var(--color-bg-card);
+            border-radius: var(--radius);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--color-gold);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-list li {
+            padding: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid var(--color-gold);
+            border-radius: 4px;
+        }
+
+        .day-card {
+            background: var(--color-bg-card);
+            border-radius: var(--radius);
+            margin-bottom: var(--space-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            border-color: var(--color-gold);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .day-header {
+            padding: var(--space-lg);
+            cursor: pointer;
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .day-header:hover {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.15) 0%, transparent 100%);
+        }
+
+        .day-header-left {
+            flex: 1;
+        }
+
+        .day-name {
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: 4px;
+        }
+
+        .day-date {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .day-summary {
+            color: var(--color-silver);
+            font-size: 0.95rem;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .expand-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--color-gold);
+        }
+
+        .day-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .day-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .day-card.expanded .day-content {
+            max-height: 3000px;
+        }
+
+        .day-content-inner {
+            padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+        }
+
+        .event {
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--color-gold);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .event:hover {
+            transform: translateX(4px);
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .event-time {
+            color: var(--color-gold-light);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .event-activity {
+            color: var(--color-text);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .event-location {
+            color: var(--color-silver);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .event-address {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .event-address:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .event-note {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            margin-top: var(--space-xs);
+            font-style: italic;
+        }
+
+        .event-options {
+            margin-top: var(--space-sm);
+            padding-left: var(--space-md);
+        }
+
+        .event-options li {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .bar-crawl-venues {
+            background: rgba(255, 107, 107, 0.1);
+            padding: var(--space-sm);
+            border-radius: 6px;
+            margin-top: var(--space-sm);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .venue-chain {
+            color: var(--color-text);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .print-note {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 10mm;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            header {
+                border: 2px solid #000;
+                background: white;
+                box-shadow: none;
+            }
+
+            h1 {
+                color: #000;
+                text-shadow: none;
+            }
+
+            .day-card {
+                border: 1px solid #000;
+                background: white;
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+
+            .day-content {
+                max-height: none !important;
+                overflow: visible !important;
+            }
+
+            .expand-icon {
+                display: none;
+            }
+
+            .event {
+                background: #f5f5f5;
+                border-left: 2px solid #000;
+            }
+
+            .print-note {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                background: #f0f0f0;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: var(--space-sm);
+            }
+
+            header {
+                padding: var(--space-lg);
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .day-header {
+                padding: var(--space-md);
+            }
+
+            .day-content-inner {
+                padding: 0 var(--space-md) var(--space-md) var(--space-md);
+            }
+
+            .event {
+                padding: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥃 26 Shots, 0 Regerts: Johnny's Liver Files for Divorce in Music City 🎸</h1>
+            <div class="subtitle">
+                <span class="emoji-decoration">🎂</span>
+                <span>January 8-11, 2026 - Nashville, TN</span>
+                <span class="emoji-decoration">🎉</span>
+            </div>
+        </header>
+
+        <div class="print-note">
+            📄 Printed Itinerary - All days expanded for your convenience
+        </div>
+
+        <section class="about-section">
+            <h2 class="section-title">🎈 About This Trip</h2>
+            <p>Join us as we celebrate Johnny's 26th birthday in Music City! Four days of unforgettable experiences including hot chicken, honky tonks, and hopefully some memories we'll actually remember. From shooting ranges to Broadway bar crawls, this is the ultimate Nashville birthday bash.</p>
+            <p style="margin-top: 12px; color: var(--color-gold);">⚠️ <em>The liver has been notified and is consulting with legal counsel.</em></p>
+        </section>
+
+        <section class="tips-section">
+            <h2 class="section-title">💡 Pro Tips</h2>
+            <ul class="tips-list">
+                <li><strong>🌤️ Weather Watch:</strong> January in Nashville can be unpredictable (30-50°F). We have backup indoor options for outdoor activities!</li>
+                <li><strong>📱 Navigation:</strong> Click any address to easily copy it for your GPS or map app.</li>
+                <li><strong>🍽️ Reservations:</strong> Consider making reservations for dinner spots, especially on weekend nights.</li>
+                <li><strong>🚗 Transportation:</strong> Most Germantown activities are walking distance from the apartment. Use rideshare for Broadway and distant locations.</li>
+                <li><strong>💳 Broadway Bars:</strong> Most bars on Lower Broadway have no cover charge. Bring cash for tips!</li>
+                <li><strong>🌶️ Prince's Hot Chicken:</strong> Start with "Medium" unless you're brave. It's hotter than you think!</li>
+            </ul>
+        </section>
+
+        <div id="itinerary">
+            <!-- Day 1: Wednesday -->
+            <div class="day-card" data-day="wednesday">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-header-left">
+                        <div class="day-name">🛬 Wednesday <span style="font-size: 0.8em; color: var(--color-silver);">(Arrival Day)</span></div>
+                        <div class="day-date">January 8</div>
+                        <div class="day-summary">Welcome &amp; Early Night</div>
+                    </div>
+                    <div class="expand-icon">▼</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-content-inner">
+                        <div class="event">
+                            <div class="event-time">⏰ 7:00 PM</div>
+                            <div class="event-activity">🍖 Dinner</div>
+                            <div class="event-location">Butchertown Hall</div>
+                            <div class="event-address" onclick="copyAddress(this)">1416 4th Ave N, Nashville, TN 37208</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 8:30 PM</div>
+                            <div class="event-activity">🍺 After Drinks</div>
+                            <div class="event-location">Jack Bryan's</div>
+                            <div class="event-address" onclick="copyAddress(this)">1412 5th Ave N, Nashville, TN 37208</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2: Thursday -->
+            <div class="day-card" data-day="thursday">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-header-left">
+                        <div class="day-name">🏛️ Thursday <span style="font-size: 0.8em; color: var(--color-silver);">(Culture Day)</span></div>
+                        <div class="day-date">January 9</div>
+                        <div class="day-summary">Culture &amp; Walks</div>
+                    </div>
+                    <div class="expand-icon">▼</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-content-inner">
+                        <div class="event">
+                            <div class="event-time">⏰ 10:00 AM</div>
+                            <div class="event-activity">☕ Breakfast</div>
+                            <div class="event-location">Steadfast Coffee</div>
+                            <div class="event-address" onclick="copyAddress(this)">603 Taylor St, Nashville, TN 37208</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 11:00 AM</div>
+                            <div class="event-activity">🏛️ Bicentennial Capitol Mall State Park (WWII Memorial)</div>
+                            <div class="event-location">Bicentennial Capitol Mall</div>
+                            <div class="event-address" onclick="copyAddress(this)">600 James Robertson Pkwy, Nashville, TN 37243</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 12:00 PM</div>
+                            <div class="event-activity">🏛️ The Parthenon or Tennessee State Museum</div>
+                            <div class="event-location">The Parthenon (Primary)</div>
+                            <div class="event-address" onclick="copyAddress(this)">2500 West End Ave, Nashville, TN 37203</div>
+                            <div class="event-note">⛅ Weather Dependent | Backup: Tennessee State Museum, 1000 Rosa L Parks Blvd, Nashville, TN 37208</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 12:30 PM</div>
+                            <div class="event-activity">🍔 Lunch</div>
+                            <div class="event-location">Buds &amp; Brews</div>
+                            <div class="event-address" onclick="copyAddress(this)">1246 3rd Ave N, Nashville, TN 37208</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 2:00 PM</div>
+                            <div class="event-activity">🚶 Cumberland River Greenway Walk</div>
+                            <div class="event-location">Cumberland River Greenway</div>
+                            <div class="event-address" onclick="copyAddress(this)">3rd Ave N &amp; Jackson St, Nashville, TN 37208</div>
+                            <div class="event-note">⛅ Weather Dependent | Backup: Pins Mechanical (Games &amp; Drinks), 1102 Grundy St, Nashville, TN 37203</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 7:00 PM</div>
+                            <div class="event-activity">🍻 Drinks/Dinner</div>
+                            <div class="event-location">Germantown Pub</div>
+                            <div class="event-address" onclick="copyAddress(this)">708 Monroe St, Nashville, TN 37208</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3: Friday -->
+            <div class="day-card" data-day="friday">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-header-left">
+                        <div class="day-name">🎯 Friday <span style="font-size: 0.8em; color: var(--color-silver);">(Action &amp; Broadway)</span></div>
+                        <div class="day-date">January 10</div>
+                        <div class="day-summary">Range, Hot Chicken &amp; Broadway Night</div>
+                    </div>
+                    <div class="expand-icon">▼</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-content-inner">
+                        <div class="event">
+                            <div class="event-time">⏰ 10:00 AM</div>
+                            <div class="event-activity">🥯 Breakfast/Lunch</div>
+                            <div class="event-location">51st Deli</div>
+                            <div class="event-address" onclick="copyAddress(this)">1311 51st Ave N, Nashville, TN 37209</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 12:00 PM</div>
+                            <div class="event-activity">🎯 Target Practice</div>
+                            <div class="event-location">Royal Range USA</div>
+                            <div class="event-address" onclick="copyAddress(this)">1740 Tomy Barnett Dr, Nashville, TN 37207</div>
+                            <div class="event-note">🔫 Bring ID! They have rentals and instruction available.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 5:00 PM</div>
+                            <div class="event-activity">🔥 Early Dinner</div>
+                            <div class="event-location">Prince's Hot Chicken</div>
+                            <div class="event-address" onclick="copyAddress(this)">5814 Nolensville Pike, Nashville, TN 37211</div>
+                            <div class="event-note">🌶️ Warning: Start with Medium heat level. Seriously. Trust us.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 7:00 PM</div>
+                            <div class="event-activity">🏠 Pregame</div>
+                            <div class="event-location">Your Apartment</div>
+                            <div class="event-address" onclick="copyAddress(this)">1401 3rd Ave N, Nashville, TN 37208</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 8:30 PM</div>
+                            <div class="event-activity">🎸 Broadway Night Bar Crawl</div>
+                            <div class="event-location">Lower Broadway - Music City's Heart</div>
+                            <div class="bar-crawl-venues">
+                                <strong>🍻 The Route:</strong>
+                                <div class="venue-chain">
+                                    PBR → Category 10 → Chiefs → Jelly Roll's Goodnight Nashville → Posty's (Post Malone's) → Luke Bryan's 32 Bridge/Jason Aldean's Rooftop
+                                </div>
+                                <div style="margin-top: 8px; color: var(--color-text-muted); font-size: 0.85rem;">
+                                    <strong>Optional Late Night:</strong> Morgan Wallen's This Bar &amp; Tennessee Kitchen or Robert's Western World
+                                </div>
+                            </div>
+                            <div class="event-note">🎵 Most venues have no cover! Live music everywhere. Bring cash for tips.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4: Saturday -->
+            <div class="day-card" data-day="saturday">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-header-left">
+                        <div class="day-name">🎂 Saturday <span style="font-size: 0.8em; color: var(--color-gold-light);">(THE BIG 26!)</span></div>
+                        <div class="day-date">January 11 - BIRTHDAY! 🎉</div>
+                        <div class="day-summary">Food, Shopping &amp; Birthday Celebration</div>
+                    </div>
+                    <div class="expand-icon">▼</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-content-inner">
+                        <div class="event">
+                            <div class="event-time">⏰ 10:00 AM</div>
+                            <div class="event-activity">🥞 Breakfast/Lunch</div>
+                            <div class="event-location">Little Hats</div>
+                            <div class="event-address" onclick="copyAddress(this)">701 Porter Rd, Nashville, TN 37206</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-time">⏰ 12:30 PM</div>
+                            <div class="event-activity">🛍️ Shopping and Drinks</div>
+                            <div class="event-location">The Gulch</div>
+                            <div class="event-address" onclick="copyAddress(this)">1207 McGavock St, Nashville, TN 37203</div>
+                            <div class="event-note">✨ Open afternoon for shopping, drinks, and exploration. Trendy neighborhood vibes!</div>
+                        </div>
+                        <div class="event" style="background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%); border-left: 3px solid var(--color-accent);">
+                            <div class="event-time">⏰ Evening</div>
+                            <div class="event-activity">🎉 BIRTHDAY CELEBRATION (Flexible Plans)</div>
+                            <div class="event-location">Multiple Options - Let's Play It By Ear!</div>
+                            <div class="event-note" style="color: var(--color-gold); font-size: 0.95rem; margin-top: 8px;">🎈 Choose your own adventure for the birthday boy!</div>
+                            <ul class="event-options">
+                                <li><strong>🎯 Option 1:</strong> Topgolf - 500 Cowan St, Nashville, TN 37207</li>
+                                <li><strong>🍽️ Dinner Option:</strong> Pelato - 1622 State St, Nashville, TN 37203</li>
+                                <li><strong>🍺 Drinks Option:</strong> The Bearded Iris Brewing - 101 Van Buren St, Nashville, TN 37208</li>
+                                <li><strong>🎵 Later Vibes:</strong> Close Company - 522 Hamilton Ave, Nashville, TN 37203</li>
+                                <li><strong>✨ Explore:</strong> Neuhoff Neighborhood</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5: Sunday -->
+            <div class="day-card" data-day="sunday">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <div class="day-header-left">
+                        <div class="day-name">👋 Sunday <span style="font-size: 0.8em; color: var(--color-silver);">(Departure Day)</span></div>
+                        <div class="day-date">January 12</div>
+                        <div class="day-summary">Farewell Lunch</div>
+                    </div>
+                    <div class="expand-icon">▼</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-content-inner">
+                        <div class="event">
+                            <div class="event-time">⏰ 12:00 PM</div>
+                            <div class="event-activity">🍻 Farewell Lunch</div>
+                            <div class="event-location">Von Elrod's Beer Hall &amp; Kitchen</div>
+                            <div class="event-address" onclick="copyAddress(this)">1004 4th Ave N, Nashville, TN 37219</div>
+                            <div class="event-note">👋 One last toast to the birthday boy and Music City!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🎉 Here's to 26 years and many more memories to come! 🎉</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: #888;">May your liver forgive you and your memories stay intact 🥃</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDay(header) {
+            const dayCard = header.closest('.day-card');
+            dayCard.classList.toggle('expanded');
+        }
+
+        function copyAddress(element) {
+            const address = element.textContent;
+            
+            // Create a temporary textarea to copy the text
+            const textarea = document.createElement('textarea');
+            textarea.value = address;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                
+                // Visual feedback
+                const originalText = element.textContent;
+                const originalBg = element.style.background;
+                element.textContent = '✓ Copied!';
+                element.style.background = 'rgba(255, 215, 0, 0.4)';
+                
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.style.background = originalBg;
+                }, 1500);
+            } catch (err) {
+                console.error('Failed to copy address:', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Auto-expand first day on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstDay = document.querySelector('.day-card');
+            if (firstDay) {
+                firstDay.classList.add('expanded');
+            }
+        });
+
+        // For print: expand all days
+        window.addEventListener('beforeprint', () => {
+            document.querySelectorAll('.day-card').forEach(card => {
+                card.classList.add('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
