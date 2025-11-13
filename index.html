@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>26 Shots, 0 Regerts: Johnny’s Liver Files for Divorce in Music City</title>
+  <title>26 Shots, 0 Regerts: Johnny's Liver Files for Divorce in Music City</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="manifest.json">
   <style>
@@ -15,6 +15,7 @@
       --text: #f6f3e7;
       --blue: #0887f7;
     }
+
     body {
       margin: 0;
       font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
@@ -22,6 +23,7 @@
       color: var(--text);
       min-height: 100vh;
     }
+
     header {
       background: linear-gradient(97deg, var(--gold), var(--accent) 80%);
       color: #181820;
@@ -29,6 +31,7 @@
       padding: 2rem 1rem 1rem;
       border-bottom: 6px solid var(--accent);
     }
+
     .icons {
       font-size: 2.5rem;
       margin-bottom: 0.6rem;
@@ -36,12 +39,14 @@
       justify-content: center;
       gap: 1rem;
     }
+
     h1 {
       font-size: 2.5rem;
       margin: 0 0 0.7rem;
       letter-spacing: 0.01em;
       font-weight: 800;
     }
+
     h2 {
       font-size: 1.2rem;
       font-weight: 600;
@@ -49,12 +54,14 @@
       margin-bottom: 0.7rem;
       color: var(--blue);
     }
+
     main {
       max-width: 700px;
       margin: 2rem auto;
       padding: 0 1rem 2rem 1rem;
       background: transparent;
     }
+
     .section {
       background: var(--card);
       border-radius: 14px;
@@ -64,9 +71,11 @@
       border-left: 6px solid var(--gold);
       transition: border-color 0.18s;
     }
+
     .section.expanded {
       border-left: 6px solid var(--accent);
     }
+
     .section-header {
       cursor: pointer;
       background: var(--gold);
@@ -80,27 +89,37 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .section-header span {
       font-size: 1.6rem;
       margin-left: 8px;
       user-select: none;
     }
+
     .section-content {
       display: none;
       padding: 1.2rem 1.6rem 1.4rem 1.6rem;
       animation: fadein 0.6s;
     }
+
     .section.expanded .section-content {
       display: block;
     }
+
     @keyframes fadein {
-      from { opacity: 0;}
-      to { opacity: 1;}
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
+
     ul.itinerary-list {
       list-style: none;
       padding: 0;
     }
+
     ul.itinerary-list li {
       background: #19192c;
       padding: 0.95rem 0.9rem 0.7rem 0.9rem;
@@ -110,31 +129,40 @@
       border-left: 4px solid var(--accent);
       transition: background 0.18s;
     }
-    ul.itinerary-list li:last-child { margin-bottom: 0;}
+
+    ul.itinerary-list li:last-child {
+      margin-bottom: 0;
+    }
+
     .itinerary-time {
       font-weight: 700;
       color: var(--gold);
       font-size: 1.05rem;
       letter-spacing: 0.04em;
     }
+
     .itinerary-place {
       font-weight: 600;
       color: var(--text);
       font-size: 1.07rem;
       margin: 0 0 5px 0;
     }
+
     .itinerary-address {
       color: var(--silver);
       font-size: 0.97rem;
       margin-bottom: 0.05rem;
       font-family: 'Fira Mono', 'Consolas', monospace;
     }
+
     .itinerary-note {
       color: var(--accent);
       font-size: 0.94rem;
       margin-top: 0.3rem;
     }
-    .about-box, .tips-box {
+
+    .about-box,
+    .tips-box {
       margin-bottom: 2rem;
       padding: 1rem 1.2rem;
       background: var(--card);
@@ -143,42 +171,74 @@
       box-shadow: 0 2px 10px 0 #0887f752;
       color: var(--text);
     }
-    .about-box h3, .tips-box h3 { color: var(--accent); margin-top: 0; }
+
+    .about-box h3,
+    .tips-box h3 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 700px) {
-      main {padding: 0 0.2rem;}
-      ul.itinerary-list li {padding: 0.8rem 0.5rem;}
-      .section-header {padding: 1rem 0.7rem;}
-      .section-content {padding: 1rem 0.8rem;}
+      main {
+        padding: 0 0.2rem;
+      }
+      ul.itinerary-list li {
+        padding: 0.8rem 0.5rem;
+      }
+      .section-header {
+        padding: 1rem 0.7rem;
+      }
+      .section-content {
+        padding: 1rem 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="icons">
-      <span>🎈</span><span>🎉</span><span>🍾</span><span>🎂</span><span>🎶</span>
+      <span>🎈</span>
+      <span>🎉</span>
+      <span>🍾</span>
+      <span>🎂</span>
+      <span>🎶</span>
     </div>
     <h1>26 Shots, 0 Regerts:</h1>
-    <h2>Johnny’s Liver Files for Divorce in Music City</h2>
+    <h2>Johnny's Liver Files for Divorce in Music City</h2>
     <h2>January 8 - 11, 2026 • Nashville, TN</h2>
   </header>
+
   <main>
     <div class="about-box">
       <h3>About This Trip</h3>
-      Johnny's 26th birthday celebration brings together friends for four days of food, music, exploration, and unforgettable nights in Nashville. Expect a mix of classic neighborhood favorites, Broadway party mayhem, and plenty of opportunities to celebrate!
-      <br><br>
-      <strong>Attendees: </strong>Johnny + friends (ages 25-26)
-      <br>
-      <strong>Accommodation:</strong> Airbnb at 1619 6th Ave N, Nashville, TN 37208
+      <p>
+        Johnny's 26th birthday celebration brings together friends for four days of food, music, exploration, and unforgettable nights in Nashville. Expect a mix of classic neighborhood favorites, Broadway party mayhem, and plenty of opportunities to celebrate!
+      </p>
+      <p>
+        <strong>Accommodation:</strong> Airbnb at 1619 6th Ave N, Nashville, TN 37208
+      </p>
     </div>
+
     <div class="tips-box">
       <h3>Pro Tips</h3>
-      <ul style="margin-top:0;">
+      <ul style="margin-top: 0;">
         <li>January weather is cold (highs 44-48°F, lows 30-32°F). Pack layers and rain gear.</li>
         <li>Consider reservations for dinner, brunch, and Topgolf—spots may fill up.</li>
         <li>Addresses are listed for quick navigation—tap to copy on most phones.</li>
         <li>For groups, apps like Lyft/Uber, Apple/Google Maps help coordinate rides.</li>
       </ul>
     </div>
+
     <!-- WEDNESDAY -->
     <section class="section" id="day-wed">
       <div class="section-header" onclick="toggleSection('day-wed')">
@@ -188,16 +248,23 @@
       <div class="section-content">
         <ul class="itinerary-list">
           <li>
-            <span class="itinerary-time">7:00 PM</span> <span class="itinerary-place">Dinner — Butchertown Hall</span>
+            <span class="itinerary-time">7:00 PM</span>
+            <span class="itinerary-place">
+              Dinner — <a href="https://www.butchertownhall.com/menu" target="_blank" rel="noopener noreferrer">Butchertown Hall</a>
+            </span>
             <div class="itinerary-address">1416 4th Ave N, Nashville, TN 37208</div>
           </li>
           <li>
-            <span class="itinerary-time">8:30 PM</span> <span class="itinerary-place">After Drinks — Jack Bryan's</span>
+            <span class="itinerary-time">8:30 PM</span>
+            <span class="itinerary-place">
+              After Drinks — <a href="https://www.jackbryans.com" target="_blank" rel="noopener noreferrer">Jack Bryan's</a>
+            </span>
             <div class="itinerary-address">1412 5th Ave N, Nashville, TN 37208</div>
           </li>
         </ul>
       </div>
     </section>
+
     <!-- THURSDAY -->
     <section class="section" id="day-thu">
       <div class="section-header" onclick="toggleSection('day-thu')">
@@ -207,34 +274,50 @@
       <div class="section-content">
         <ul class="itinerary-list">
           <li>
-            <span class="itinerary-time">10:00 AM</span> <span class="itinerary-place">Breakfast — Steadfast Coffee</span>
+            <span class="itinerary-time">10:00 AM</span>
+            <span class="itinerary-place">
+              Breakfast — <a href="https://steadfastcoffee.com" target="_blank" rel="noopener noreferrer">Steadfast Coffee</a>
+            </span>
             <div class="itinerary-address">603 Taylor St, Nashville, TN 37208</div>
           </li>
           <li>
-            <span class="itinerary-time">11:00 AM</span> <span class="itinerary-place">Bicentennial Capitol Mall State Park (WWII Memorial)</span>
+            <span class="itinerary-time">11:00 AM</span>
+            <span class="itinerary-place">Bicentennial Capitol Mall State Park (WWII Memorial)</span>
             <div class="itinerary-address">600 James Robertson Pkwy, Nashville, TN 37243</div>
           </li>
           <li>
-            <span class="itinerary-time">12:00 PM</span> <span class="itinerary-place">The Parthenon or Tennessee State Museum (Weather Dependent)</span>
-            <div class="itinerary-address">Parthenon: 2500 West End Ave, Nashville, TN 37203<br>
-            Tennessee State Museum: 1000 Rosa L Parks Blvd, Nashville, TN 37208</div>
+            <span class="itinerary-time">12:00 PM</span>
+            <span class="itinerary-place">The Parthenon or Tennessee State Museum (Weather Dependent)</span>
+            <div class="itinerary-address">
+              Parthenon: 2500 West End Ave, Nashville, TN 37203
+              <br>
+              Tennessee State Museum: 1000 Rosa L Parks Blvd, Nashville, TN 37208
+            </div>
           </li>
           <li>
-            <span class="itinerary-time">12:30 PM</span> <span class="itinerary-place">Lunch — Buds & Brews</span>
+            <span class="itinerary-time">12:30 PM</span>
+            <span class="itinerary-place">
+              Lunch — <a href="https://budsandbrews.com" target="_blank" rel="noopener noreferrer">Buds & Brews</a>
+            </span>
             <div class="itinerary-address">1246 3rd Ave N, Nashville, TN 37208</div>
           </li>
           <li>
-            <span class="itinerary-time">2:00 PM</span> <span class="itinerary-place">Cumberland River Greenway Walk</span>
+            <span class="itinerary-time">2:00 PM</span>
+            <span class="itinerary-place">Cumberland River Greenway Walk</span>
             <div class="itinerary-address">Access: 3rd Ave N & Jackson St, Nashville, TN 37208</div>
             <div class="itinerary-note">Weather backup: Pins Mechanical, 1102 Grundy St, Nashville, TN 37203</div>
           </li>
           <li>
-            <span class="itinerary-time">7:00 PM</span> <span class="itinerary-place">Drinks/Dinner — Germantown Pub</span>
+            <span class="itinerary-time">7:00 PM</span>
+            <span class="itinerary-place">
+              Drinks/Dinner — <a href="https://germantownpub.com" target="_blank" rel="noopener noreferrer">Germantown Pub</a>
+            </span>
             <div class="itinerary-address">708 Monroe St, Nashville, TN 37208</div>
           </li>
         </ul>
       </div>
     </section>
+
     <!-- FRIDAY -->
     <section class="section" id="day-fri">
       <div class="section-header" onclick="toggleSection('day-fri')">
@@ -244,31 +327,44 @@
       <div class="section-content">
         <ul class="itinerary-list">
           <li>
-            <span class="itinerary-time">10:00 AM</span> <span class="itinerary-place">Breakfast/Lunch — 51st Deli</span>
+            <span class="itinerary-time">10:00 AM</span>
+            <span class="itinerary-place">
+              Breakfast/Lunch — <a href="http://51stdeli.com" target="_blank" rel="noopener noreferrer">51st Deli</a>
+            </span>
             <div class="itinerary-address">1311 51st Ave N, Nashville, TN 37209</div>
           </li>
           <li>
-            <span class="itinerary-time">12:00 PM</span> <span class="itinerary-place">Target Practice — Royal Range USA</span>
+            <span class="itinerary-time">12:00 PM</span>
+            <span class="itinerary-place">
+              Target Practice — <a href="https://royalrangeusa.com" target="_blank" rel="noopener noreferrer">Royal Range USA</a>
+            </span>
             <div class="itinerary-address">1740 Tomy Barnett Dr, Nashville, TN 37207</div>
           </li>
           <li>
-            <span class="itinerary-time">5:00 PM</span> <span class="itinerary-place">Early Dinner — Prince's Hot Chicken</span>
+            <span class="itinerary-time">5:00 PM</span>
+            <span class="itinerary-place">
+              Early Dinner — <a href="https://princeshotchicken.com" target="_blank" rel="noopener noreferrer">Prince's Hot Chicken</a>
+            </span>
             <div class="itinerary-address">5814 Nolensville Pike, Nashville, TN 37211</div>
           </li>
           <li>
-            <span class="itinerary-time">7:00 PM</span> <span class="itinerary-place">Pregame — Your Apartment</span>
+            <span class="itinerary-time">7:00 PM</span>
+            <span class="itinerary-place">Pregame — Your Apartment</span>
             <div class="itinerary-address">1401 3rd Ave N, Nashville, TN 37208</div>
           </li>
           <li>
-            <span class="itinerary-time">8:30 PM</span> <span class="itinerary-place">Broadway Night Bar Crawl</span>
+            <span class="itinerary-time">8:30 PM</span>
+            <span class="itinerary-place">Broadway Night Bar Crawl</span>
             <div class="itinerary-note">
-              Bar sequence: PBR → Category 10 → Chiefs → Jelly Roll's Goodnight Nashville → Posty's (Post Malone's) → Luke Bryan's 32 Bridge/Jason Aldean's Rooftop → Optional: Morgan Wallen's This Bar or Robert's Western World<br>
+              Bar sequence: PBR → Category 10 → Chiefs → Jelly Roll's Goodnight Nashville → Posty's (Post Malone's) → Luke Bryan's 32 Bridge/Jason Aldean's Rooftop → Optional: Morgan Wallen's This Bar or Robert's Western World
+              <br>
               <strong>All venues on Lower Broadway</strong>
             </div>
           </li>
         </ul>
       </div>
     </section>
+
     <!-- SATURDAY -->
     <section class="section" id="day-sat">
       <div class="section-header" onclick="toggleSection('day-sat')">
@@ -278,15 +374,22 @@
       <div class="section-content">
         <ul class="itinerary-list">
           <li>
-            <span class="itinerary-time">10:00 AM</span> <span class="itinerary-place">Breakfast/Lunch — Little Hats</span>
+            <span class="itinerary-time">10:00 AM</span>
+            <span class="itinerary-place">
+              Breakfast/Lunch — <a href="https://littlehatsnashville.com" target="_blank" rel="noopener noreferrer">Little Hats</a>
+            </span>
             <div class="itinerary-address">701 Porter Rd, Nashville, TN 37206</div>
           </li>
           <li>
-            <span class="itinerary-time">12:30 PM</span> <span class="itinerary-place">Shopping & Drinks — The Gulch</span>
+            <span class="itinerary-time">12:30 PM</span>
+            <span class="itinerary-place">
+              Shopping & Drinks — <a href="https://www.thegulchnashville.com" target="_blank" rel="noopener noreferrer">The Gulch</a>
+            </span>
             <div class="itinerary-address">1207 McGavock St, Nashville, TN 37203</div>
           </li>
           <li>
-            <span class="itinerary-time">Evening</span> <span class="itinerary-place">Birthday Celebration (Flexible)</span>
+            <span class="itinerary-time">Evening</span>
+            <span class="itinerary-place">Birthday Celebration (Flexible)</span>
             <div class="itinerary-note">
               <strong>Options:</strong>
               <ul>
@@ -301,6 +404,7 @@
         </ul>
       </div>
     </section>
+
     <!-- SUNDAY -->
     <section class="section" id="day-sun">
       <div class="section-header" onclick="toggleSection('day-sun')">
@@ -310,15 +414,72 @@
       <div class="section-content">
         <ul class="itinerary-list">
           <li>
-            <span class="itinerary-time">12:00 PM</span> <span class="itinerary-place">Farewell Lunch — Von Elrod’s Beer Hall & Kitchen</span>
+            <span class="itinerary-time">12:00 PM</span>
+            <span class="itinerary-place">
+              Farewell Lunch — <a href="https://vonelrods.com" target="_blank" rel="noopener noreferrer">Von Elrod's Beer Hall & Kitchen</a>
+            </span>
             <div class="itinerary-address">1004 4th Ave N, Nashville, TN 37219</div>
           </li>
         </ul>
       </div>
     </section>
+
+    <!-- GOOD TO KNOW -->
+    <section class="section" id="day-good">
+      <div class="section-header" onclick="toggleSection('day-good')">
+        <span>Good To Know</span>
+        <span id="day-good-toggle">+</span>
+      </div>
+      <div class="section-content">
+        <ul class="itinerary-list">
+          <li>
+            <span class="itinerary-place">
+              Gas Station — <a href="https://goo.gl/maps/FK48MbDJB58ekXj6A" target="_blank" rel="noopener noreferrer">Shell at 6th Ave N & Monroe</a>
+            </span>
+            <div class="itinerary-address">Open 5:00 AM – 11:00 PM daily</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Park — <a href="https://www.nashville.gov/Parks-and-Recreation/Parthenon-Vincent-Thomas-Park.aspx" target="_blank" rel="noopener noreferrer">Centennial Park</a>
+            </span>
+            <div class="itinerary-address">Open 5:00 AM – 10:00 PM daily</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Late Night Dining — <a href="https://nashvilleguru.com/donuts/" target="_blank" rel="noopener noreferrer">Five Daughters Bakery & Donut Bar</a>
+            </span>
+            <div class="itinerary-address">Open Fri-Sat until Midnight</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Bar — <a href="https://www.lourosenhaus.com" target="_blank" rel="noopener noreferrer">Lou Rosenhaus Bar</a>
+            </span>
+            <div class="itinerary-address">Open 4:00 PM – 2:00 AM daily</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Vape Shop — <a href="https://www.facebook.com/vaporroomnashville/" target="_blank" rel="noopener noreferrer">Vapor Room Nashville</a>
+            </span>
+            <div class="itinerary-address">Open 11:00 AM – 11:00 PM daily</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Liquor Store — <a href="https://www.totalwine.com/store-info/tn/nashville/broadway-total-wine--more-/store/565" target="_blank" rel="noopener noreferrer">Total Wine Nashville Broadway</a>
+            </span>
+            <div class="itinerary-address">Open 10:00 AM – 9:00 PM daily</div>
+          </li>
+          <li>
+            <span class="itinerary-place">
+              Grocery — <a href="https://www.kroger.com/stores/details/0146" target="_blank" rel="noopener noreferrer">Kroger Nashville Central</a>
+            </span>
+            <div class="itinerary-address">Open 6:00 AM – Midnight daily</div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
+
   <script>
-    // Collapsible section logic
     function toggleSection(id) {
       var section = document.getElementById(id);
       var toggle = document.getElementById(id + '-toggle');
@@ -330,7 +491,8 @@
         toggle.textContent = '–';
       }
     }
-    // Optionally, expand first day on load
+
+    // Expand first day on load
     document.getElementById('day-wed').classList.add('expanded');
     document.getElementById('day-wed-toggle').textContent = '–';
 
